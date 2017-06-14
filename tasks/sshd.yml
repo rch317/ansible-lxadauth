@@ -1,0 +1,15 @@
+### Reconfigure sshd as well
+- name: Create /etc/ssh/sshd_config
+  template:
+    src: templates/sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    mode: 0600
+    force: yes
+    backup: yes
+
+### Make sure sshd is enabled and started
+- name: Enable sshd Service
+  service:
+    name: sshd
+    enabled: yes
+    state: restarted
