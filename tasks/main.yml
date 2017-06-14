@@ -9,5 +9,5 @@
   include: sssd.yml
 
 ### Can probably be skipped...
-- name: Configure SSH
-  include: sshd.yml
+# - name: Configure SSH
+#   include: sshd.yml
