@@ -1,0 +1,18 @@
+### Use the adcli command to join our domain.
+- name: Join the domain
+  become: yes
+  become_user: root
+  shell: "echo -n '{{ adauth_pass }}' | /usr/sbin/adcli join --stdin-password -O {{ adauth_server_ou }} -U {{ adauth_user }} -D {{ adauth_domain }} -H {{ansible_fqdn}} --user-principal=host/{{ansible_fqdn}}@{{ adauth_domain|upper }}"
+  args:
+    creates: /etc/krb5.keytab
+  register: adcli_output
+  any_errors_fatal: True
+
+### Copy over our krb5.conf
+- name: Create /etc/krb5.conf
+  template:
+    src: templates/krb5.conf.j2
+    dest: /etc/krb5.conf
+    mode: 0644
+    force: yes
+    backup: yes

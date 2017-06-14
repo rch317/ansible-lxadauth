@@ -1,0 +1,6 @@
+---
+### defaults file for lxadauth
+adauth_domain:    "SOMEDOMAIN.COM"
+adauth_user:      "svc.domainAdmin"
+adauth_pass:      "svc.DomainAdminPassW0rd"
+adauth_server_ou: "DC=SOMEDOMAIN,DC=COM"

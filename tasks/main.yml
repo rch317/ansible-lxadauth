@@ -1,0 +1,13 @@
+---
+- name: Required packages
+  include: packages.yml
+
+- name: Join Host to AD
+  include: adjoin.yml
+
+- name: Configure SSSD
+  include: sssd.yml
+
+### Can probably be skipped...
+- name: Configure SSH
+  include: sshd.yml

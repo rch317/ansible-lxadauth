@@ -1,0 +1,16 @@
+### Install required packages for lxadauth
+- name: Install required packages
+  become: yes
+  become_user: root
+  yum: pkg={{item}} state=latest
+  with_items:
+    - "epel-release"
+    - "adcli"
+    - "oddjob"
+    - "oddjob-mkhomedir"
+    - "sssd-client"
+    - "sssd-ad"
+    - "sssd-krb5"
+    - "sssd-krb5-common"
+    - "krb5-workstation"
+    - "pamtester"
