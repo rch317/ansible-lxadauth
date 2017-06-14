@@ -13,4 +13,4 @@
     - "sssd-krb5"
     - "sssd-krb5-common"
     - "krb5-workstation"
-    - "pamtester"
+    # - "pamtester"
