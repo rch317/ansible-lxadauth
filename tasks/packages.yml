@@ -5,6 +5,7 @@
   yum: pkg={{item}} state=latest
   with_items:
     - "epel-release"
+    - "libselinux-python"
     - "adcli"
     - "oddjob"
     - "oddjob-mkhomedir"
