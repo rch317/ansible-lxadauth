@@ -1,13 +1,12 @@
 ---
 - name: Required packages
-  include: packages.yml
+  import_tasks: packages.yml
 
 - name: Join Host to AD
-  include: adjoin.yml
+  import_tasks: adjoin.yml
 
 - name: Configure SSSD
-  include: sssd.yml
+  import_tasks: sssd.yml
 
-### Can probably be skipped...
-# - name: Configure SSH
-#   include: sshd.yml
+- name: Configure SSH
+  import_tasks: sshd.yml
